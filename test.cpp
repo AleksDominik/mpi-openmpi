@@ -149,7 +149,7 @@ int main(int argc, char** argv) {
 	}
 	afficher(aint);
 	MPI_Barrier(MPI_COMM_WORLD);
-	firststepmodif(aint, bint, cint, fint);
+	firststepmodif(aint, bint, cint, fint);//premiere transformation
 
 	MPI_Barrier(MPI_COMM_WORLD);
 	secondstepmodif(aint, bint, cint, fint);//deuxieme transformation
@@ -187,8 +187,8 @@ int main(int argc, char** argv) {
 	//afficher(interfacerec);
 	//jonction des interfaces le resultat est stocke dans la variable interface qui contient  les valeurs interface de la composante actuelle
 	//probleme de division par zero
-	if (world_rank != world_size - 1) {//le dernier composant de recoit pas de composant donc les valeurs d'interface ne sont pas modifiees
-		if (interfacerec[1] != 0) {//si cette valeur est null aucune jonction n'est possible car declenchant une division par zero
+	if (world_rank != world_size - 1) {//le dernier composant ne recoit pas de composant donc les valeurs d'interface ne sont pas modifiees
+		if (interfacerec[1] != 0) {//si cette valeur est nulle aucune jonction n'est possible car declenchant une division par zero
 
 		//on peut affecter les valeurs directement sans utilisation de variable pivot parce qu'il n 'a 
 		//pas  des les expression de reutilisation entre variable modifee
@@ -211,9 +211,29 @@ int main(int argc, char** argv) {
 	MPI_Barrier(MPI_COMM_WORLD);
 	if (world_rank >0) {
 		MPI_Gather(&interface[0], 4, MPI_DOUBLE, NULL, 4, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+		vector<double> x; 
+		x.resize(world_size);
+		MPI_Barrier(MPI_COMM_WORLD);
+		MPI_Bcast(&x[0], world_size, MPI_DOUBLE, 0, MPI_COMM_WORLD);//reception des solution d'interface pour la resolution des autres composants de x
+		
+		//peut etre regroupe en une fonction :resolution des x dans chaque process --------------------
+		vector<double> vectorsolution;
+		for (int t = 0; t < aint.size(); t++) {
+			if (bint[t] != 0) {
+				vectorsolution.push_back((fint[t] - aint[t] * x[world_rank- 1] - cint[t] * x[world_rank]) / bint[t]);
+			}
+			else {
+				vectorsolution.push_back(0);
+			}
+
+		}
+		
+																	
+
+		
 
 	}
-	else {
+	else {// autrement dit world_size==0
 		vector<double>recinter;
 		recinter.resize(4 *(world_size));
 		MPI_Gather(&interface[0], 4, MPI_DOUBLE, &recinter[0], 4, MPI_DOUBLE, 0, MPI_COMM_WORLD);
@@ -235,11 +255,29 @@ int main(int argc, char** argv) {
 		afficher(aa);
 		aa.erase(aa.begin(), aa.begin() + 1);
 		cc.pop_back();
+		vector<double> x;
+		x = tridiagonal_solver(aa, bb, cc, ff);// resolution du systeme tridiagonale 
+		afficher(x);
+		MPI_Barrier(MPI_COMM_WORLD);
+		MPI_Bcast(&x[0], world_size, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+		
+		//peut etre regroupe en une fonction :resolution des x dans chaque process --------------------
+		vector<double> vectorsolution;
+		for (int t = 0; t < aint.size(); t++) {
+			if (bint[t] != 0) {
+				vectorsolution.push_back((fint[t]  - cint[t] * x[world_rank]) / bint[t]);
+			}
+			else {
+				vectorsolution.push_back(0);
+			}
 
-		x = tridiagonal_solver(aa, bb, cc, ff);
-
+		}
+		//-------------------
+		
+		
 	}
 
+	
 	
 
 	

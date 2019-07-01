@@ -39,5 +39,7 @@ C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:    
 C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:             _Ty=int
 C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:         ]
 C:\Users\Aleksdominik\source\repos\test\test\test.cpp(122,40): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\Aleksdominik\source\repos\test\test\test.cpp(221,21): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\Aleksdominik\source\repos\test\test\test.cpp(266,21): warning C4018:  '<': signed/unsigned mismatch
 C:\Users\Aleksdominik\source\repos\test\test\test.cpp(31,6): warning C4101:  'ddd': unreferenced local variable
   test.vcxproj -> C:\Users\Aleksdominik\source\repos\test\Debug\test.exe
