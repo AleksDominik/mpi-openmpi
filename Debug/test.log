@@ -1,0 +1,43 @@
+﻿  test.cpp
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(9,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(43,17): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(66,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(109,18): warning C4244:  '=': conversion from '_Ty' to '_Ty', possible loss of data
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(109,18): warning C4244:         with
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(109,18): warning C4244:         [
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(109,18): warning C4244:             _Ty=double
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(109,18): warning C4244:         ]
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(109,18): warning C4244:         and
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(109,18): warning C4244:         [
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(109,18): warning C4244:             _Ty=int
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(109,18): warning C4244:         ]
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(110,16): warning C4244:  '=': conversion from '_Ty' to '_Ty', possible loss of data
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(110,16): warning C4244:         with
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(110,16): warning C4244:         [
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(110,16): warning C4244:             _Ty=double
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(110,16): warning C4244:         ]
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(110,16): warning C4244:         and
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(110,16): warning C4244:         [
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(110,16): warning C4244:             _Ty=int
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(110,16): warning C4244:         ]
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(111,24): warning C4244:  '=': conversion from '_Ty' to '_Ty', possible loss of data
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(111,24): warning C4244:         with
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(111,24): warning C4244:         [
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(111,24): warning C4244:             _Ty=double
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(111,24): warning C4244:         ]
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(111,24): warning C4244:         and
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(111,24): warning C4244:         [
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(111,24): warning C4244:             _Ty=int
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(111,24): warning C4244:         ]
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:  '=': conversion from '_Ty' to '_Ty', possible loss of data
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:         with
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:         [
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:             _Ty=double
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:         ]
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:         and
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:         [
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:             _Ty=int
+C:\Users\Aleksdominik\source\repos\test\test\utils.h(112,18): warning C4244:         ]
+C:\Users\Aleksdominik\source\repos\test\test\test.cpp(122,40): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\Aleksdominik\source\repos\test\test\test.cpp(31,6): warning C4101:  'ddd': unreferenced local variable
+  test.vcxproj -> C:\Users\Aleksdominik\source\repos\test\Debug\test.exe
