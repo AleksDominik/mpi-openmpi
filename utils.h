@@ -17,40 +17,7 @@ double fRand(double fMin, double fMax)
 	double f = (double)rand() / RAND_MAX;
 	return fMin + f * (fMax - fMin);
 }
-vector<vector<int> >divide(vector<int> &v, int &n)
-{
 
-
-	// determine number of sub-vectors of size n
-	const int size = (v.size() - 1) / n + 1;
-
-	// create array of vectors to store the sub-vectors
-	vector<vector<int> > vec;
-
-	// each iteration of this loop process next set of n elements
-	// and store it in a vector at k'th index in vec
-	for (int k = 0; k < size; ++k)
-	{
-		// get range for next set of n elements
-		auto start_itr = std::next(v.cbegin(), k * n);
-		auto end_itr = std::next(v.cbegin(), k * n + n);
-
-		// allocate memory for the sub-vector
-		//vec[k].resize(n);
-
-		// code to handle the last sub-vector as it might
-		// contain less elements
-		if (k * n + n > v.size()) {
-			end_itr = v.cend();
-			//vec[k].resize(v.size() - k * n);
-		}
-
-		// copy elements from the input range to the sub-vector
-		copy(start_itr, end_itr, vec[k].begin());
-	}
-	return vec;
-
-	}
 
 void print(vector<int> const& v)
 {
